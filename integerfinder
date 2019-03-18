@@ -1,0 +1,32 @@
+import java.util.*;
+public class S18Prog3_findHigest2Numbers{
+	public static void main (String[] arg){
+Scanner scanner = new Scanner(System.in);
+/* Printing statement on console before prompting user to enter
+* integer N */
+System.out.println("Enter an integer: ");
+/* Prompting user for taking integer */
+int n = scanner.nextInt();
+/* Printing statement on console that informs user to enter N numbers */
+System.out.println("Enter " + n + " numbers: ");
+/* Creating float number array which can store N elements */
+float [] array = new float[n];
+/* Taking N numbers from user through Standard Input */
+for (int i=0; i<n; ++i){
+array[i] = scanner.nextFloat();
+}
+/* Printing Inputted Numbers */
+System.out.println("The inputted numbers are: ");
+for (int i=0; i<n; ++i){
+System.out.print(array[i]+" ");
+}
+System.out.println();
+/* Sorting array of floated numbers in ascending order
+* So, highest number will be in array[n-1] index
+* and second highest number will be in array[n-2] index
+Arrays.sort(array);
+/* Printing highest and second highest numbers */
+System.out.println("The highest number is " + array[array.length-1]);
+System.out.println("The second highest number is " + array[array.length-2]);
+}
+}
