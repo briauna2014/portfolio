@@ -1,0 +1,52 @@
+import java.util.*;
+public class S18_Prog4_Calculator{
+	public static void main (String [] arg){
+char ch = 'a';
+int result=0;
+int[] numbers= new int[2]; //Array of integer type
+Scanner scan = new Scanner(System.in); //Scanner class object to take user input
+while(ch!='q' || ch !='Q'){
+System.out.println("Enter a character: ");
+ch=scan.next().charAt(0); //Scan a character input by user
+ if(ch=='+' || ch=='-' || ch=='*' || ch=='%' || ch=='/' ){ //If ch is one of any 5 mathematical operator
+System.out.println("Enter 2 integers: ");
+numbers[0]=scan.nextInt(); //Scan the numbers input by user
+numbers[1]=scan.nextInt();
+switch(ch){
+case '+':
+result=numbers[0]+numbers[1]; //Addition
+System.out.println(numbers[0]+" "+ch+" "+numbers[1]+" = "+result);
+break;
+case '-':
+result=numbers[0]-numbers[1]; //Subtraction
+System.out.println(numbers[0]+" "+ch+" "+numbers[1]+" = "+result);
+break;
+case '*':
+result=numbers[0]*numbers[1]; //Multiplication
+System.out.println(numbers[0]+" "+ch+" "+numbers[1]+" = "+result);
+break;
+case '%':
+result=numbers[0]%numbers[1]; //Mode
+System.out.println(numbers[0]+" "+ch+" "+numbers[1]+" = "+result);
+break;
+case '/':
+if(numbers[1]>0){ //Only if denominator is greater than 0
+result=numbers[0]/numbers[1]; //Division
+System.out.println(numbers[0]+" "+ch+" "+numbers[1]+" = "+result);
+}
+else{
+System.out.println("Base should not be zero in division");
+}
+break;
+}
+}
+else if(ch=='q'||ch=='Q'){ //If user choose to quit
+break; //brake the while loop
+}
+else{
+System.out.println("Invalid operator "+ch);
+}
+}
+System.out.println("program ended");
+}
+}
